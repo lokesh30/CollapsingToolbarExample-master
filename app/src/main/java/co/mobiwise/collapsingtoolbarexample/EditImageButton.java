@@ -16,7 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class EditImageButton extends AppCompatActivity {
-
+// testing commit
     private boolean isLongPressed = false;
 
     @Bind(R.id.toolbar)
