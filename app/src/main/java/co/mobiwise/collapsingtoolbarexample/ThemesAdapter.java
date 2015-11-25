@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,10 +46,12 @@ public class ThemesAdapter extends ArrayAdapter<Item> {
        /* LinearLayout linearLayout = (LinearLayout) themeHolder.findViewById(R.id.theme_layout);*/
         ImageButton imageButton = (ImageButton) themeHolder.findViewById(R.id.editImageButton);
         textView.setTag(position);
+        Toolbar tool = (Toolbar) themeHolder.findViewById(R.id.my_toolbar);
         //set onclick action
         if(themePos == position){
             imageView.startAnimation(AnimationUtils.loadAnimation(context, R.anim.image_click));
             textView.setBackgroundColor(Color.GREEN);
+
         }else {
             textView.setBackgroundColor(Color.GRAY);
         }

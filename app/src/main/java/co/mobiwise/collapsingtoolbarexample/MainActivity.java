@@ -1,8 +1,9 @@
 package co.mobiwise.collapsingtoolbarexample;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +13,15 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
+import android.support.v7.app.AppCompatActivity;
 
 
-public class MainActivity extends Activity  {
+
+
+public class MainActivity extends AppCompatActivity  {
     private GridView gridViewObj;
     private ArrayList<Item> themeArray = new ArrayList<>();
     private ArrayList<Integer> dialogArray = new ArrayList<>();
@@ -25,7 +30,14 @@ public class MainActivity extends Activity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.theme_main);
+        setContentView(R.layout.theme_layout);
+
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle("Themes");
+
+
 
         //set Main grid view item
         themeArray.add(new Item(R.drawable.morning, "Evening"));
@@ -119,6 +131,8 @@ public class MainActivity extends Activity  {
             }
         });*/
     }
+
+
 }
 
 
